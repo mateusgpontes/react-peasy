@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Form } from "./StylesC";
 import { useActions } from "easy-peasy";
 
 function Search() {
@@ -8,7 +7,7 @@ function Search() {
     return actions.user.getUsers;
   });
   return (
-    <Form onSubmit={e => e.preventDefault()}>
+    <form onSubmit={e => e.preventDefault()}>
       <div className="form-group">
         <label>Buscar Usuários github</label>
         <input
@@ -28,7 +27,7 @@ function Search() {
       >
         Buscar
       </button>
-    </Form>
+    </form>
   );
 }
 

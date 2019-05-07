@@ -1,6 +1,5 @@
 import React from "react";
 import { useStore, usaActions } from "easy-peasy";
-import { ListaUsuario, ListaImg, ListaAncora } from "./StylesC";
 
 function UserList() {
   const users = useStore(state => {
@@ -11,15 +10,10 @@ function UserList() {
   return (
     <div>
       {users.map((user, index) => (
-        <ListaUsuario key={index}>
-          <ListaImg
-            src={user.avatar_url}
-            alt="Avatar"
-            width={100}
-            height={100}
-          />
-          <ListaAncora>{user.login}</ListaAncora>
-        </ListaUsuario>
+        <div key={index}>
+          <img src={user.avatar_url} alt="Avatar" width={100} height={100} />
+          <a>{user.login}</a>
+        </div>
       ))}
     </div>
   );
